@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">LED CAD PRO</string>
+    <string name="title_activity_main">LED CAD PRO</string>
+    <string name="package_name">com.maher.ledcadpro</string>
+    <string name="custom_url_scheme">com.maher.ledcadpro</string>
+</resources>
