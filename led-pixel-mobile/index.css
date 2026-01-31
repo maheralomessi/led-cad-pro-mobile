@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-red: #e11d48;
+  --dark-bg: #000000;
+  --card-bg: #111111;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  background-color: var(--dark-bg);
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .font-cairo {
+  font-family: 'Cairo', sans-serif;
+}
+
+.btn-red {
+  background-color: var(--primary-red);
+  transition: all 0.3s ease;
+}
+
+.btn-red:hover {
+  background-color: #be123c;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(225, 29, 72, 0.4);
+}
+
+.glass-card {
+  background: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.blueprint-grid {
+  background-image: radial-gradient(circle, #331111 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: var(--primary-red); border-radius: 3px; }
