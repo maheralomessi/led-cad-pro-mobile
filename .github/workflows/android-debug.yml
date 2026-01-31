@@ -5,9 +5,6 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
-permissions:
-  contents: read
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -29,24 +26,16 @@ jobs:
         uses: android-actions/setup-android@v3
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build web
         run: npm run build
-
-      - name: Ensure Android platform exists
-        run: |
-          if [ ! -d android ]; then
-            npx cap add android
-          fi
 
       - name: Capacitor sync android
         run: npx cap sync android
 
       - name: Build APK (Debug)
         working-directory: android
-        env:
-          GRADLE_OPTS: -Dorg.gradle.jvmargs="-Xmx3g -Dfile.encoding=UTF-8"
         run: |
           chmod +x gradlew
           ./gradlew --no-daemon assembleDebug
